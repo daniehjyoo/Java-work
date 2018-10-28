@@ -1,0 +1,48 @@
+/*
+ * Heejae Yoo
+ * hxy172830
+ * Decimal to hex
+ */
+import java.util.*;
+
+public class Q_18point22 {
+
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner (System.in);
+		int value;
+		System.out.print("Enter a decimal number to convert to hexadecimal: ");
+		value = input.nextInt();
+		System.out.println("Your hexadecimal number is: " + dec2Hex(value));
+		input.close();
+		
+	}
+
+	public static String dec2Hex (int value)
+	{
+		String result = "";
+		int remainder = value % 16;
+/*		if(remainder > 9 && remainder < 16) {
+			switch (remainder) {
+			case 10 : return "A";
+			case 11 : return "B";
+			case 12 : return "C";
+			case 13 : return "D";
+			case 14 : return "E";
+			case 15 : return "F"; 
+			default: return "";
+			}
+		}*/
+		if (remainder == 10) {return "A";}
+		else if (remainder == 11) {return "B";}
+		else if (remainder == 12) {return "C";}
+		else if (remainder == 13) {return "D";}
+		else if (remainder == 14) {return "E";}
+		else if (remainder == 15) {return "F";}
+		else {
+			result = remainder + "";
+			return dec2Hex( value / 16 ) + result;
+		}
+		
+	}
+}
