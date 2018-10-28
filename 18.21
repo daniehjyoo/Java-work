@@ -1,0 +1,32 @@
+/*
+ * Heejae Yoo
+ * hxy172830
+ * Recursively convert a decimal number into a number as a string
+ */
+import java.util.*;
+public class Q_18point21 {
+
+	public static void main(String[] args) {
+
+			Scanner input = new Scanner (System.in);
+			System.out.print("Enter a decimal number: ");
+			int value = input.nextInt();
+			
+			System.out.println("The binary number is: " + dec2Bin(value) + ".");
+			input.close();
+
+	}
+	
+// Decimal gets divided by 2 and the remainder ( 0 ||  1 ) is the binary 
+// Decimal number gets divided till quotient is 0
+	public static String dec2Bin (int value) {
+		String result = "";
+		int remainder = value % 2;
+		//the if-else statement recursion goes to the very last quotient before moving back up to original number remainder
+		if (value == 0 || value == 1) // 1 and 2 decimal are the same binary, also can't divide by 2
+			return value + "";
+		else 
+			result = remainder + "";
+			return dec2Bin(value / 2) + result;
+	}
+}
