@@ -22,23 +22,15 @@ public class Q_18point22 {
 	{
 		String result = "";
 		int remainder = value % 16;
-/*		if(remainder > 9 && remainder < 16) {
-			switch (remainder) {
-			case 10 : return "A";
-			case 11 : return "B";
-			case 12 : return "C";
-			case 13 : return "D";
-			case 14 : return "E";
-			case 15 : return "F"; 
-			default: return "";
-			}
-		}*/
-		if (remainder == 10) {return "A";}
-		else if (remainder == 11) {return "B";}
-		else if (remainder == 12) {return "C";}
-		else if (remainder == 13) {return "D";}
-		else if (remainder == 14) {return "E";}
-		else if (remainder == 15) {return "F";}
+
+		if (remainder < 10) {
+			return remainder + "";}
+		else if (remainder == 10) {return dec2Hex(value /16) + "A";}
+		else if (remainder == 11) {return dec2Hex(value /16) + "B";}
+		else if (remainder == 12) {return dec2Hex(value /16) + "C";}
+		else if (remainder == 13) {return dec2Hex(value /16) + "D";}
+		else if (remainder == 14) {return dec2Hex(value /16) + "E";}
+		else if (remainder == 15) {return dec2Hex(value /16) + "F";}
 		else {
 			result = remainder + "";
 			return dec2Hex( value / 16 ) + result;
