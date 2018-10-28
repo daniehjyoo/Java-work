@@ -1,7 +1,7 @@
 /*
  * Heejae Yoo
  * hxy172830
- * Decimal to hex
+ * Decimal to hex from user input
  */
 import java.util.*;
 
