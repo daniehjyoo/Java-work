@@ -23,8 +23,8 @@ public class Q_18point22 {
 		String result = "";
 		int remainder = value % 16;
 
-		if (remainder < 10) {
-			return remainder + "";}
+		if (value < 10) {
+			return value + "";}
 		else if (remainder == 10) {return dec2Hex(value /16) + "A";}
 		else if (remainder == 11) {return dec2Hex(value /16) + "B";}
 		else if (remainder == 12) {return dec2Hex(value /16) + "C";}
