@@ -23,16 +23,16 @@ public class Q_18point24 {
 		int element = hexString.charAt(0)-'0';
 		
 		if (length == 1) {
-			return element;
+			if (element > 16)
+				return element - 7 ;
+			else 
+				return element;
 		}
-		//else if (element == 'A' ||element == 'B' ||element == 'B' ||element == 'D' ||element == 'E' || element == 'F')
 		else if (element >16 && element <23 )
 		{
-			System.out.println(element-7);
 			return ( element - 7 << (4 * (length - 1))) + hex2Dec(hexString.substring(1));
 		}
 		else
-			System.out.println(element);
 			return ( element << (4 * (length - 1))) + hex2Dec(hexString.substring(1));
 	}
 }
