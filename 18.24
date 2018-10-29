@@ -1,0 +1,36 @@
+/*
+ * Heejae Yoo
+ * hxy172830
+ * Hex to Decimal from user input
+ */
+
+import java.util.Scanner;
+
+public class Q_18point24 {
+
+	public static void main(String[] args) {
+
+
+		 Scanner input = new Scanner(System.in);
+		 System.out.print("Enter a hexadecimal number to convert to Decimal: ");
+		 String value = input.nextLine();
+		 System.out.println("Your number in decimal format is: " + hex2Dec(value));
+		 input.close();
+
+	}
+	public static int hex2Dec(String hexString) {
+		int length = hexString.length();
+		int element = hexString.charAt(0);
+		
+		if (length == 1) {
+			return element - '0';
+		}
+		else if (element == 'A' ||element == 'B' ||element == 'B' ||element == 'D' ||element == 'E' || element == 'F')
+		{
+			element = element - element + 10;
+			return ( element << (4 * (length - 1))) + hex2Dec(hexString.substring(1));
+		}
+		else
+			return ( element - '0' << (4 * (length - 1))) + hex2Dec(hexString.substring(1));
+	}
+}
