@@ -3,6 +3,7 @@
  * hxy172830
  * Binary to Decimal from user input
  */
+
 import java.util.*;
 
 public class Q_18point23 {
@@ -19,17 +20,14 @@ public class Q_18point23 {
 //2^n where n is the length of the string. any result where 1 exists add them up to get decimal
 	public static int bin2Dec(String binaryString) {
 
-		int result = 0 , index = 0 ;
 		int length = binaryString.length();
 
 		// 0 and 1 alone is just that decimal number
 		if (length == 1) {
 			return binaryString.charAt(0)-'0';}
 		else
-			if (binaryString.charAt(index) == '1') {
-				index++;
-				return (int) Math.pow(2, length - 1) + bin2Dec(binaryString.substring(index));
-			}
-		return result;
+			// << is bitwise operation of shifting (2^n) 
+			return (binaryString.charAt(0)-'0' << length-1) + bin2Dec(binaryString.substring(1)); 
+		// substring reduces string by 1 from the left
 	}
 }
