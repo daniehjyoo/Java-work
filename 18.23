@@ -1,0 +1,35 @@
+/*
+ * Heejae Yoo
+ * hxy172830
+ * Binary to Decimal from user input
+ */
+import java.util.*;
+
+public class Q_18point23 {
+
+	public static void main(String[] args) {
+
+		 Scanner input = new Scanner(System.in);
+		 System.out.print("Enter a Binary number to convert to Decimal: ");
+		 String value = input.nextLine();
+		 System.out.println("Your number in decimal format is: " + bin2Dec(value));
+		 input.close();
+	}
+	
+//2^n where n is the length of the string. any result where 1 exists add them up to get decimal
+	public static int bin2Dec(String binaryString) {
+
+		int result = 0 , index = 0 ;
+		int length = binaryString.length();
+
+		// 0 and 1 alone is just that decimal number
+		if (length == 1) {
+			return binaryString.charAt(0)-'0';}
+		else
+			if (binaryString.charAt(index) == '1') {
+				index++;
+				return (int) Math.pow(2, length - 1) + bin2Dec(binaryString.substring(index));
+			}
+		return result;
+	}
+}
