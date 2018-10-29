@@ -20,17 +20,19 @@ public class Q_18point24 {
 	}
 	public static int hex2Dec(String hexString) {
 		int length = hexString.length();
-		int element = hexString.charAt(0);
+		int element = hexString.charAt(0)-'0';
 		
 		if (length == 1) {
-			return element - '0';
+			return element;
 		}
-		else if (element == 'A' ||element == 'B' ||element == 'B' ||element == 'D' ||element == 'E' || element == 'F')
+		//else if (element == 'A' ||element == 'B' ||element == 'B' ||element == 'D' ||element == 'E' || element == 'F')
+		else if (element >16 && element <23 )
 		{
-			element = element - element + 10;
-			return ( element << (4 * (length - 1))) + hex2Dec(hexString.substring(1));
+			System.out.println(element-7);
+			return ( element - 7 << (4 * (length - 1))) + hex2Dec(hexString.substring(1));
 		}
 		else
-			return ( element - '0' << (4 * (length - 1))) + hex2Dec(hexString.substring(1));
+			System.out.println(element);
+			return ( element << (4 * (length - 1))) + hex2Dec(hexString.substring(1));
 	}
 }
