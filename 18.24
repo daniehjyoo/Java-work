@@ -21,11 +21,11 @@ public class Q_18point24 {
 	public static int hex2Dec(String hexString) {
 		int length = hexString.length();
 		int element = hexString.charAt(0)-'0';
-		
+		//base case
 		if (length == 1) {
-			if (element > 16)
+			if (element > 16) //case for letters 
 				return element - 7 ;
-			else 
+			else //regular number
 				return element;
 		}
 		else if (element >16 && element <23 )
